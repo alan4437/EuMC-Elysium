@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "gamblingmenu",
+  "version": "${version}",
+  "name": "Gambling Menu",
+  "description": "Custom Right Shift GUI with payment tools, auctions, a live profit tracker and draggable HUDs",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.discordlink.GamblingMenuClient"
+    ]
+  },
+  "mixins": [
+    "discordlink.client.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "license": "MIT"
+}

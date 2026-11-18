@@ -1,0 +1,4 @@
+0c254dea4ce04bdf6b10406729cdc883404dc8da9ee8e7337d56549dfb88ed03  EuMC-Elysium-1.14.0-mc1.21.11-fabric.jar
+5ef8de63c5585e1ff1b06f31e4b4b805502f5d0e63e8baab0720ce7a790cdec6  EuMC-Elysium-1.14.0-mc26.1-fabric.jar
+69d338a65341a03aaa1a10cd8fafd5021ce900977240ef0bcdd823c8aa02e084  EuMC-Elysium-1.14.0-mc26.2-fabric.jar
+dca7986457742ad00e2c9ea9c0fa51595969f64a605de933185299d1b84a0972  EuMC-Elysium-1.14.0-mc26.3-fabric.jar

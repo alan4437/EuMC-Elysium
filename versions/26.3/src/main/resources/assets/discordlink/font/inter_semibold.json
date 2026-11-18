@@ -1,0 +1,14 @@
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "discordlink:inter_semibold.ttf",
+      "size": 11,
+      "oversample": 2,
+      "shift": [
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+plugins { id 'net.fabricmc.fabric-loom' version '1.17.21' }
+group = 'dev.discordlink'
+base { archivesName = 'gambling-menu' }
+loom { splitEnvironmentSourceSets(); mods { discordlink { sourceSet sourceSets.main; sourceSet sourceSets.client } } }
+dependencies {
+ minecraft "com.mojang:minecraft:${minecraft_version}"
+ implementation "net.fabricmc:fabric-loader:${loader_version}"
+ implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+}
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand version: project.version } }
+java { toolchain.languageVersion = JavaLanguageVersion.of(25); withSourcesJar() }
+tasks.withType(JavaCompile).configureEach { options.release = 25 }
+// Opt-in: launches a real Minecraft client; not included in the release JAR.
+if (project.hasProperty('clientTests')) {
+ fabricApi { configureTests { createSourceSet = true; modId = 'discordlink-test'; enableGameTests = false; enableClientGameTests = true; eula = true } }
+ loom.runs.clientGameTest.vmArg '-Dfabric.client.gametest.disableNetworkSynchronizer=true'
+}
+
+// Dependency-free deterministic checks for money parsing, matching and exact refunds.
+tasks.register('paymentRulesTest', JavaExec) {
+ dependsOn tasks.named('testClasses')
+ classpath = sourceSets.test.runtimeClasspath
+ mainClass = 'dev.gamblingmenu.payment.PaymentRulesTest'
+}
+tasks.named('check') { dependsOn tasks.named('paymentRulesTest') }
+// The tests use the dependency-free JavaExec harness above rather than a JUnit engine.
+tasks.named('test') { failOnNoDiscoveredTests = false }
+
+tasks.register('auctionRulesTest', JavaExec) {
+ dependsOn tasks.named('testClasses')
+ classpath = sourceSets.test.runtimeClasspath
+ mainClass = 'dev.gamblingmenu.auction.AuctionLedgerTest'
+}
+tasks.named('check') { dependsOn tasks.named('auctionRulesTest') }
+
+tasks.register('profitRulesTest', JavaExec) {
+ dependsOn tasks.named('testClasses')
+ classpath = sourceSets.test.runtimeClasspath
+ mainClass = 'dev.gamblingmenu.profit.ProfitLedgerTest'
+}
+tasks.named('check') { dependsOn tasks.named('profitRulesTest') }
+
+tasks.named('jar') { archiveFileName = "EuMC-Elysium-${project.version}-mc${minecraft_version}-fabric.jar" }

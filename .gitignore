@@ -1,0 +1,12 @@
+**/.gradle/
+**/build/
+**/run/
+**/runs/
+**/logs/
+**/.idea/
+*.iml
+.env
+.env.*
+*.db
+*.sqlite*
+__pycache__/
