@@ -40,3 +40,5 @@ tasks.register('profitRulesTest', JavaExec) {
  mainClass = 'dev.gamblingmenu.profit.ProfitLedgerTest'
 }
 tasks.named('check') { dependsOn tasks.named('profitRulesTest') }
+
+tasks.named('remapJar') { archiveFileName = "EuMC-Elysium-${project.version}-mc${minecraft_version}-fabric.jar" }

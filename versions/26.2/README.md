@@ -1,6 +1,6 @@
 # EuMC Elysium — Fabric 26.2
 
-Port of Gambling Menu 1.14.0. Mod ID stays `gamblingmenu`, retaining local configuration
+Port of Gambling Menu 1.0.0. Mod ID stays `gamblingmenu`, retaining local configuration
 filenames and all existing features. Use only the JAR matching your Minecraft version.
 
 Requires Minecraft Java 26.2, Java 25+, Fabric Loader 0.20.1+, and matching Fabric API
@@ -14,7 +14,7 @@ Build with Java 25 and the included Gradle 9.6 wrapper:
 ```
 
 On Windows use `gradlew.bat`. Runtime JAR:
-`build/libs/EuMC-Elysium-1.14.0-mc26.2-fabric.jar`.
+`build/libs/EuMC-Elysium-1.0.0-mc26.2-fabric.jar`.
 The Gradle JVM must be Java 25; the source targets Java 25 bytecode.
 
 Right Shift opens/closes the menu, Escape closes it, and F5 retains camera switching.

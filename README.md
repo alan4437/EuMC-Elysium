@@ -1,10 +1,10 @@
 # EuMC Elysium
 
-Open-source client-side Minecraft mod by utud. **Fabric only.** Version 1.14.0.
+Open-source client-side Minecraft mod by utud. **Fabric only.** Version 1.0.0.
 
 ## Install
 
-Choose ONE matching JAR from `releases/1.14.0/`, install Fabric Loader and the matching Fabric API, then put both mods in your instance's `mods` directory. Remove older copies of this mod (ID `gamblingmenu`).
+Choose ONE matching JAR from `releases/1.0.0/`, install Fabric Loader and the matching Fabric API, then put both mods in your instance's `mods` directory. Remove older copies of this mod (ID `gamblingmenu`).
 
 | Minecraft | Java | Fabric Loader | Tested Fabric API | Source |
 |---|---|---|---|---|
@@ -24,6 +24,10 @@ Right Shift opens/closes the non-pausing menu; Escape closes it. F5 retains Mine
 There is no Discord authentication or backend dependency. The Discord icon opens a public invite in your browser. Historical `dev.discordlink` package and asset names remain for compatibility.
 
 Read the guides in [docs](docs) for exact payment behaviour. Amounts accept K/M/B/T suffixes with exact decimal arithmetic. Receipts come from supported server chat formats, not a server payment API. Duplicate suppression is best-effort because chat has no transaction IDs. Gambling counts mean confirmed multiplier payouts, not verified wins/losses. Guard donations and refunds are excluded from profit; ordinary and auction receipts can still enter payment totals. Auctions do not transfer inventory items or provide escrow.
+
+## Read the source online
+
+No login is needed to browse the complete code: [1.21.11](versions/1.21.11/src), [26.1](versions/26.1/src), [26.2](versions/26.2/src), [26.3](versions/26.3/src). Each folder includes the client, shared logic, resources and tests.
 
 ## Build and test
 
